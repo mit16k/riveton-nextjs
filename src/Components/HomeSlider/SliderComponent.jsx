@@ -23,7 +23,6 @@ import { BsArrowLeftRight } from "react-icons/bs";
 import { FaRegCreditCard } from "react-icons/fa6";
 import { FaTableTennis } from "react-icons/fa";
 import { FaHandSparkles } from "react-icons/fa";
-// import videobg from "/rivetonbgvideo.mp4";
 
 const SliderComponent = ({ sliderData }) => {
   const [showVideoModal, setShowVideoModal] = useState(false);
@@ -38,7 +37,7 @@ const SliderComponent = ({ sliderData }) => {
     setAutoplay(true); // Enable autoplay when the video player is closed
   };
   const settings = {
-    dots: true,
+    dots: false,
     fade: true,
     infinite: true,
     speed: 200,
@@ -135,40 +134,32 @@ const SliderComponent = ({ sliderData }) => {
         ))}
       </AutoplaySlider> */}
 
-        <div className="slider-container relative">
+        <div className="wo-container relative">
           <Slider {...settings}>
             {sliderData.map((single, index) => (
-              // console.log(single, "single"),
-              <div className="bg-overlay">
-                {/* <img
-                  style={{ width: "100%" }}
-                  src={
-                    single?.property?.title_image
-                      ? single?.property?.title_image
-                      : PlaceHolderImg
-                  }
-                /> */}
+              <div className="bg-overlay" key={index}>
+                {/* Video background */}
                 <video
-                  className=""
-                  src="/rivetonbgvideo.mp4"
+                  className="video-bg"
+                  src="landing.mp4"
                   autoPlay
                   loop
                   muted
                 />
-                <h1 className="position-absolute image-title text-z-index">
-                  {single.property.title}
-                </h1>
-                <p className="subtitle text-z-index">
-                  Where Waterfront Dreams Become Reality
-                </p>
+
+                {/* Text container for title, subtitle, and button */}
+                <div className="text-container">
+                  <h1 className="image-title">{single.property.title}</h1>
+                  <p className="subtitle">
+                    Where Waterfront Dreams Become Reality
+                  </p>
+                  <li className={`text-dark loadMoreBtn`}>
+                    {translate("learnMore")}
+                  </li>
+                </div>
               </div>
             ))}
           </Slider>
-          <li
-            className={`text-uppercase bg-white text-dark loeadMoreBtn d-flex align-items-center px-3 py-3`}
-          >
-            {translate("learnMore")}
-          </li>
 
           <div className="menuItemsBtn">
             <div className="px-2 prop-search-bar d-flex">

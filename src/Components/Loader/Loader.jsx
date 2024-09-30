@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import ebroker from "@/assets/Logo_Color.png";
+import logo from "@/assets/Logo.png";
 
 import { useSelector } from "react-redux";
 import { settingsData } from "@/store/reducer/settingsSlice";
@@ -29,7 +29,7 @@ const Loader = () => {
           <Image
             loading="lazy"
             // src={settingData?.web_logo ? settingData?.web_logo : ebroker}
-            src={ebroker}
+            src={logo}
             alt="no_img"
             className="logo"
             width={0}

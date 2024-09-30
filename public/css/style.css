@@ -202,12 +202,12 @@ h1 h2 h3 h4 h5 h6 {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: transparent;
+  background-color: #00000046;
 }
 
 .loader {
-  border: 4px solid var(--primary-color);
-  border-top: 4px solid white;
+  border: 5px solid #00e5ee;
+  border-top: 5px solid white;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -1371,7 +1371,7 @@ h1 h2 h3 h4 h5 h6 {
   width: auto;
   background-size: cover;
   overflow: hidden;
-  margin-top: -86px;
+  margin-top: -10%;
   position: relative;
 }
 
@@ -11464,19 +11464,6 @@ button.learn-more-project .button-text {
   cursor: not-allowed;
 }
 
-.image-title {
-  color: var(--primary-text-color01);
-  font-family: "Optima";
-  font-size: 46px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 60px;
-  text-transform: uppercase;
-  margin: 0;
-  top: 150px;
-  left: 30px;
-}
-
 .slick-dots li button {
   height: 15px !important;
   width: 15px !important;
@@ -11523,24 +11510,6 @@ button.learn-more-project .button-text {
 
 .slick-dots li.slick-active button {
   background: #000 !important;
-}
-
-.loeadMoreBtn {
-  position: absolute;
-  top: 8%;
-  left: 20px;
-}
-
-.subtitle {
-  position: absolute;
-  color: #fff;
-  font-family: "Lato", sans-serif;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 35.2px;
-  top: 220px;
-  left: 30px;
 }
 
 .menuItemsBtn {
@@ -11758,7 +11727,14 @@ button.learn-more-project .button-text {
   align-items: center;
   justify-content: center;
 }
-
+.bg-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+}
 .bg-overlay:after {
   content: "";
   position: absolute;
@@ -11777,7 +11753,64 @@ button.learn-more-project .button-text {
       rgba(7, 28, 53, 0.7) 5.93%,
       rgba(7, 28, 53, 0.14) 80.83%
     );
-  z-index: 2;
+  z-index: 0;
+}
+.text-container {
+  margin-top: -40%;
+  margin-left: 5%;
+  max-width: 70%;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.image-title {
+  text-align: left;
+  color: var(--primary-text-color01);
+  font-family: "Optima";
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  text-align: left;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 35.2px;
+}
+
+.loadMoreBtn {
+  background-color: var(--primary-background);
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+  display: inline-block;
+  margin-top: 20px;
+  width: auto;
+  text-transform: uppercase;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 229, 238, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(0, 229, 238, 0.8),
+      0 0 30px rgba(0, 229, 238, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 229, 238, 0.4);
+  }
 }
 
 .text-z-index {
@@ -11840,6 +11873,6 @@ button.learn-more-project .button-text {
 }
 .slider-container video {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
